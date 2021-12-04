@@ -1,0 +1,23 @@
+extends layout
+block content
+	div
+		h2 Order Summary
+		p Placed by: #{data.username}
+		p Restaurant name: #{data.restaurantName}
+		table
+			tr
+				th Quantity
+				th Name
+			
+			each order in data.order
+				tr
+					td #{order.quantity}
+					td #{order.name}
+			
+		br
+		|
+		p Sub-total: #{data.subtotal}
+		p Tax: #{data.tax}
+		p Delivery Fee: #{data.fee}
+		p ________________________________________
+		h3 Total: #{data.total}

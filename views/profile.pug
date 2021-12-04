@@ -1,0 +1,20 @@
+extends layout
+block content
+	div
+		h2 User Profile for #{data.username}
+		form(method='post', action="/profile/update")
+			if update
+				p Private: #{data.privacy}
+				if data.privacy
+					input(name="privacy" id="privacy" type="checkbox" checked)
+				else
+					input(name="privacy" id="privacy" type="checkbox")
+				br 
+				input(type='submit', value='Update Privacy')
+			
+		h2 Order History
+		each order in orderHistory
+			a(href="/orders/" + order._id)
+				p= order._id
+		else
+			p There are no orders for #{data.username}

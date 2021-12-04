@@ -1,0 +1,36 @@
+html
+	head
+		title Assignment 4
+		link(rel="stylesheet" href="/css/main.css")
+		
+	body(onload="init()")
+		div.header
+			block navBar
+			if session.user
+				ul
+					a(href="/")
+						li Home
+					a(href="/users?name=")
+						li Users
+					a(href="/order")
+						li Order Food
+					a(href="/profile")
+						li #{session.user.userName} Profile
+					a(href="/logout")
+						li Logout
+			else
+				ul
+					a(href="/")
+						li Home
+					a(href="/users?name=")
+						li Users
+					a(href="/register")
+						li Register
+					a(href="/login")
+						li Login
+		br
+		|
+		div(style="{margin-left:0px}")
+		block content
+		
+		block info

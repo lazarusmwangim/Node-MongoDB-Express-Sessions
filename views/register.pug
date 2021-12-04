@@ -1,0 +1,15 @@
+extends layout
+block content
+	div
+		if errorMessage
+			div
+				p= "Error: " + errorMessage
+		form(method='post', action="/register")
+			p Username: 
+			input(name="username" id="username" type="text" placeholder="User Name" required)
+			br
+			p Password: 
+			input(name="password" id="password" type="password" placeholder="Password" required)
+			br 
+			input(type='submit', value='Register')
+		

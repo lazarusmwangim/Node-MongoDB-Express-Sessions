@@ -1,0 +1,8 @@
+extends layout
+block content
+	div
+		each d in data
+			a(href="/users/" + d._id)
+				p= d.username
+		else
+			p There are no names that match the criteria

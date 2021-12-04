@@ -1,0 +1,14 @@
+extends layout
+block content
+	div
+		if errorMessage
+			div
+				<strong>Error:</strong> p #{errorMessage}
+		form(method='post', action="/login")
+			p Username: 
+			input(name="username" id="username" type="text" placeholder="User Name" required)
+			br
+			p Password: 
+			input(name="password" id="password" type="password" placeholder="Password" required)
+			br 
+			input(type='submit', value='Login')
